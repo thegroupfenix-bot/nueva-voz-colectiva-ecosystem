@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tarjeta &amp; Firma — Nueva Voz Colectiva</title>
+<link rel="canonical" href="https://corporacionnuevavozcolectiva.org/templates/tarjeta-firma.html" />
+<link rel="apple-touch-icon" href="../assets/icons/icon-192x192.png" />
+<link rel="manifest" href="../site.webmanifest" />
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/icon-192x192.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Nueva Voz Colectiva Ecosystem" />
+<meta property="og:title" content="Tarjeta &amp; Firma — Nueva Voz Colectiva" />
+<meta property="og:url" content="https://corporacionnuevavozcolectiva.org/templates/tarjeta-firma.html" />
+<meta property="og:image" content="https://corporacionnuevavozcolectiva.org/assets/og-image.png" />
+<meta property="og:locale" content="es_ES" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Tarjeta &amp; Firma — Nueva Voz Colectiva" />
+<meta name="twitter:url" content="https://corporacionnuevavozcolectiva.org/templates/tarjeta-firma.html" />
+<meta name="twitter:image" content="https://corporacionnuevavozcolectiva.org/assets/og-image.png" />
+<meta name="design_doc_mode" content="canvas">
+<link rel="preload" as="image" href="../assets/logo/nvc-logo-oficial.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Narrow:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/tokens.css" />
+<style>
+  body{font-family:'Archivo',sans-serif;}
+  .frame-label{position:absolute;top:-30px;left:0;font-family:'Archivo Narrow';text-transform:uppercase;letter-spacing:.1em;font-size:12px;font-weight:700;color:var(--nvc-ink-soft);}
+  .card-front,.card-back{width:1050px;height:600px;border-radius:24px;position:relative;padding:64px;box-sizing:border-box;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.18);}
+  .card-front{background:var(--nvc-cream);color:var(--nvc-navy);display:flex;flex-direction:column;justify-content:space-between;}
+  .card-back{background:var(--nvc-navy);color:#fff;display:flex;align-items:center;justify-content:center;}
+  .card-back img{width:260px;}
+  .card-front img.mark{height:56px;}
+  .card-front .name{font-size:38px;font-weight:800;letter-spacing:-.01em;}
+  .card-front .role{font-family:'Archivo Narrow';text-transform:uppercase;letter-spacing:.1em;font-size:18px;color:var(--nvc-copper-deep);font-weight:700;margin-top:8px;}
+  .card-front .contact{font-family:'Archivo Narrow';font-size:16px;color:var(--nvc-ink-soft);line-height:2;}
+  .sig{width:640px;background:#fff;border:1px solid var(--nvc-line);border-radius:16px;padding:28px 32px;box-shadow:0 10px 30px rgba(0,0,0,.08);}
+  .sig-row{display:flex;gap:22px;align-items:center;}
+  .sig-row img{height:52px;}
+  .sig-name{font-size:20px;font-weight:800;color:var(--nvc-navy);}
+  .sig-role{font-family:'Archivo Narrow';text-transform:uppercase;letter-spacing:.08em;font-size:12.5px;color:var(--nvc-copper-deep);font-weight:700;margin-top:2px;}
+  .sig-div{width:2px;background:var(--nvc-copper);align-self:stretch;}
+  .sig-contact{font-size:13px;color:var(--nvc-ink-soft);line-height:1.8;}
+  .sig-contact a{color:var(--nvc-patina-deep);}
+</style>
+<template id="__bundler_thumbnail"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#16293F"/><text x="50" y="58" font-size="34" fill="#B0783F" text-anchor="middle" font-family="Georgia">NVC</text></svg></template>
+</head>
+<body>
+
+<div style="position:absolute;left:60px;top:60px;">
+  <div class="frame-label">Tarjeta · Frente</div>
+  <div class="card-front">
+    <img class="mark" src="../assets/logo/nvc-logo-oficial.png" alt="Nueva Voz Colectiva">
+    <div>
+      <div class="name">María Restrepo</div>
+      <div class="role">Coordinación de Programas</div>
+    </div>
+    <div class="contact">
+      maria.restrepo@corporacionnuevavozcolectiva.org<br>
+      +00 000 000 0000 · corporacionnuevavozcolectiva.org
+    </div>
+  </div>
+</div>
+
+<div style="position:absolute;left:1200px;top:60px;">
+  <div class="frame-label">Tarjeta · Reverso</div>
+  <div class="card-back"><img src="../assets/logo/nvc-logo-oficial.png" alt="Nueva Voz Colectiva"></div>
+</div>
+
+<div style="position:absolute;left:60px;top:780px;">
+  <div class="frame-label">Firma de correo electrónico</div>
+  <div class="sig">
+    <div class="sig-row">
+      <img src="../assets/logo/nvc-logo-oficial.png" alt="Nueva Voz Colectiva">
+      <div class="sig-div"></div>
+      <div>
+        <div class="sig-name">María Restrepo</div>
+        <div class="sig-role">Coordinación de Programas · Nueva Voz Colectiva</div>
+        <div class="sig-contact" style="margin-top:8px;">
+          <a href="mailto:maria.restrepo@corporacionnuevavozcolectiva.org">maria.restrepo@corporacionnuevavozcolectiva.org</a> · +00 000 000 0000<br>
+          <a href="https://corporacionnuevavozcolectiva.org/">corporacionnuevavozcolectiva.org</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /design-system/
+Disallow: /templates/
+
+Sitemap: https://corporacionnuevavozcolectiva.org/sitemap.xml

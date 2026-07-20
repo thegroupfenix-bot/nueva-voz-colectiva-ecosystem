@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Developer Handoff — Nueva Voz Colectiva</title>
+<link rel="canonical" href="https://corporacionnuevavozcolectiva.org/design-system/handoff.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Nueva Voz Colectiva Ecosystem" />
+<meta property="og:title" content="Developer Handoff — Nueva Voz Colectiva" />
+<meta property="og:url" content="https://corporacionnuevavozcolectiva.org/design-system/handoff.html" />
+<meta property="og:image" content="https://corporacionnuevavozcolectiva.org/assets/og-image.png" />
+<meta property="og:locale" content="es_ES" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Developer Handoff — Nueva Voz Colectiva" />
+<meta name="twitter:url" content="https://corporacionnuevavozcolectiva.org/design-system/handoff.html" />
+<meta name="twitter:image" content="https://corporacionnuevavozcolectiva.org/assets/og-image.png" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="theme-color" content="#16293F" />
+<link rel="apple-touch-icon" href="../assets/icons/icon-192x192.png" />
+<link rel="manifest" href="../site.webmanifest" />
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/icon-192x192.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="image" href="../assets/logo/nvc-logo-oficial.png" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Narrow:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/tokens.css" />
+<link rel="stylesheet" href="../css/base.css" />
+<link rel="stylesheet" href="../css/layout.css" />
+<link rel="stylesheet" href="../css/components.css" />
+<style>
+  body{background:var(--nvc-paper);}
+  .doc-shell{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1400px;margin:0 auto;}
+  .doc-toc,.doc-main{min-width:0;}
+  .doc-toc{position:sticky;top:0;align-self:start;height:100vh;overflow-y:auto;padding:32px 24px;border-right:1px solid var(--nvc-line);}
+  .doc-toc a{display:block;padding:7px 0;font-size:13.5px;color:var(--nvc-ink-soft);text-decoration:none;}
+  .doc-toc a:hover{color:var(--nvc-copper-deep);}
+  .doc-main{padding:48px 56px 100px;max-width:900px;}
+  .doc-main h2{margin-top:56px;padding-top:20px;border-top:1px solid var(--nvc-line);}
+  .doc-main h2:first-of-type{margin-top:0;border-top:none;padding-top:0;}
+  .doc-main h3{margin-top:32px;}
+  .doc-main p, .doc-main li{color:var(--nvc-ink-soft);font-size:15px;line-height:1.7;}
+  pre{background:var(--nvc-navy-deep);color:#EAE5DB;padding:20px 22px;border-radius:var(--r-md);overflow-x:auto;max-width:100%;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.7;}
+  code{font-family:'JetBrains Mono',monospace;font-size:.9em;background:rgba(22,41,63,.06);padding:1px 5px;border-radius:4px;}
+  pre code{background:none;padding:0;}
+  .rule-list{list-style:none;padding:0;margin:16px 0;display:grid;gap:10px;}
+  .rule-list li{padding-left:26px;position:relative;}
+  .rule-list li::before{content:"→";position:absolute;left:0;color:var(--nvc-copper-deep);font-weight:700;}
+  @media(max-width:900px){.doc-shell{grid-template-columns:1fr;}.doc-toc{position:static;height:auto;}}
+</style>
+</head>
+<body data-base="../" data-page="design-system" data-screen-label="Developer Handoff">
+
+<header id="nvc-header"></header>
+
+<div class="doc-shell">
+  <aside class="doc-toc cond">
+    <div style="font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:12px;color:var(--nvc-navy);margin-bottom:16px;">Handoff técnico</div>
+    <a href="#arquitectura">01 Arquitectura del portal</a>
+    <a href="#estructura">02 Estructura de carpetas</a>
+    <a href="#tokens">03 Tokens y variables</a>
+    <a href="#grid">04 Grid y responsive</a>
+    <a href="#componentes">05 Componentes</a>
+    <a href="#nav">06 Navegación / sitemap escalable</a>
+    <a href="#estados">07 Estados e interacción</a>
+    <a href="#animaciones">08 Animaciones</a>
+    <a href="#convenciones">09 Convenciones y buenas prácticas</a>
+    <a href="#crecimiento">10 Cómo agregar una página nueva</a>
+  </aside>
+
+  <main class="doc-main">
+    <span class="eyebrow">Handoff de desarrollo</span>
+    <h1 style="margin-top:16px;">De diseño a producción</h1>
+    <p class="lead" style="margin-top:14px;">Este documento contiene todo lo necesario para construir, extender y mantener el portal de Nueva Voz Colectiva Ecosystem sin tomar decisiones adicionales de diseño.</p>
+
+    <h2 id="arquitectura">01 · Arquitectura del portal</h2>
+    <p>El sitio es un <b>portal institucional multi-página</b>, no un one-page. Cada sección principal del sitemap es una página independiente con su propia URL, SEO, breadcrumb y CTA. La navegación nunca depende únicamente de anclas (#) — las anclas solo se usan dentro de una página para categorías internas (ej. Biblioteca).</p>
+    <ul class="rule-list">
+      <li>Cada página real vive en su propia ruta: <code>/programas/liderazgo-ciudadano.html</code></li>
+      <li>El header, mega-menú y footer son componentes compartidos (ver sección 06), no se duplican a mano</li>
+      <li>Todo módulo (Programas, Proyectos, Biblioteca, etc.) acepta páginas nuevas sin tocar las existentes</li>
+    </ul>
+
+    <h2 id="estructura">02 · Estructura de carpetas</h2>
+    <pre><code>NVC-Portal/
+  css/
+    tokens.css        # variables: color, tipografía, espaciado, radios, sombras
+    base.css          # reset, tipografía base, botones, badges, forms atómicos
+    layout.css        # header, mega-menú, footer, hero, breadcrumb, grid
+    components.css    # cards, tablas, modales, alertas, tabs, timeline, KPIs...
+  js/
+    nav.js            # SITE_MAP único + render de header/footer/breadcrumb/drawer
+  assets/logo/nvc-logo-oficial.png   # Único logotipo aprobado (no modificar)
+  index.html            Inicio
+  quienes-somos.html
+  impacto.html
+  eventos.html
+  participa.html
+  cooperacion-internacional.html
+  transparencia.html
+  sala-de-prensa.html
+  contacto.html
+  programas/
+    index.html          landing
+    liderazgo-ciudadano.html
+    educacion-civica.html          (mismo patrón, por crear)
+    participacion-ciudadana.html   (mismo patrón, por crear)
+    desarrollo-territorial.html    (mismo patrón, por crear)
+    cooperacion.html               (mismo patrón, por crear)
+  proyectos/
+    index.html
+    proyecto-piloto-territorial.html
+  biblioteca/
+    index.html          (categorías: guías, publicaciones, informes, estudios)
+  design-system/
+    index.html          documentación viva del sistema
+    handoff.html         este documento
+</code></pre>
+    <p>Las páginas de programa marcadas “mismo patrón” siguen exactamente la estructura de <code>liderazgo-ciudadano.html</code>: hero + descripción + acordeón + aside de datos rápidos + CTA. Duplicar ese archivo y cambiar el contenido es suficiente — no rediseñar.</p>
+
+    <h2 id="tokens">03 · Tokens y variables</h2>
+    <p>Todas las variables viven en <code>css/tokens.css</code>. Nunca declarar un color, tipografía o espaciado fuera de ese archivo.</p>
+    <pre><code>/* Color de marca (aprobado) */
+--nvc-copper:  #B0783F;
+--nvc-patina:  #5E8E7E;
+--nvc-navy:    #16293F;
+
+/* Tipografía */
+--font-display: 'Archivo', system-ui, sans-serif;
+--font-cond:    'Archivo Narrow', sans-serif;
+
+/* Espaciado base 4px */
+--sp-1: 4px;  --sp-5: 24px;  --sp-9: 96px;</code></pre>
+    <h3>Equivalencias adicionales para impresión / Tailwind</h3>
+    <table class="nvc-table" style="margin-top:12px;width:100%;">
+      <thead><tr><th>Color</th><th>HEX</th><th>RGB</th><th>CMYK</th><th>HSL</th><th>Tailwind sugerido</th></tr></thead>
+      <tbody>
+        <tr><td>Cobre Colectivo</td><td>#B0783F</td><td>176 120 63</td><td>25 47 78 8</td><td>29° 46% 47%</td><td><code>copper-600</code></td></tr>
+        <tr><td>Pátina / Verde Voz</td><td>#5E8E7E</td><td>94 142 126</td><td>58 24 47 4</td><td>165° 20% 46%</td><td><code>patina-600</code></td></tr>
+        <tr><td>Azul Profundo</td><td>#16293F</td><td>22 41 63</td><td>87 71 47 47</td><td>211° 48% 17%</td><td><code>navy-900</code></td></tr>
+      </tbody>
+    </table>
+    <p>Design tokens en JSON (para pipelines Style Dictionary / Tokens Studio):</p>
+    <pre><code>{
+  "color": {
+    "copper":  { "value": "#B0783F" },
+    "patina":  { "value": "#5E8E7E" },
+    "navy":    { "value": "#16293F" },
+    "cream":   { "value": "#F4F1EA" },
+    "success": { "value": "#3F7A5C" },
+    "warning": { "value": "#B08A2E" },
+    "error":   { "value": "#B0492F" },
+    "info":    { "value": "#3C6E8F" }
+  },
+  "spacing": { "1":"4px","2":"8px","3":"12px","4":"16px","5":"24px","6":"32px","7":"48px","8":"64px","9":"96px" },
+  "radius":  { "sm":"6px","md":"12px","lg":"16px","pill":"999px" }
+}</code></pre>
+
+    <h2 id="grid">04 · Grid y responsive</h2>
+    <ul class="rule-list">
+      <li>Ancho máximo de contenido: <code>--maxw: 1240px</code>, con padding lateral fluido <code>--pad: clamp(22px,5vw,64px)</code></li>
+      <li>Grillas con <code>.grid.g2 / .g3 / .g4</code> (CSS Grid + gap, nunca floats)</li>
+      <li>Breakpoints: móvil hasta 560px, tablet 561–980px, desktop 981–1439px, desktop grande ≥1440px</li>
+      <li>El header colapsa a menú hamburguesa + drawer por debajo de 980px</li>
+    </ul>
+
+    <h2 id="componentes">05 · Componentes</h2>
+    <p>Documentación viva e interactiva de los ~25 componentes (botones, forms, cards, KPIs, tablas, modales, alertas, breadcrumb, paginación, buscador, filtros, tabs, acordeón, timeline, galería) en <a href="index.html">Design System → Componentes</a>. Cada uno usa solo clases de <code>components.css</code> / <code>base.css</code> — no crear estilos inline nuevos para variantes ya cubiertas.</p>
+
+    <h2 id="nav">06 · Navegación / sitemap escalable</h2>
+    <p>Header, mega-menú, footer y breadcrumb se generan desde un único arreglo <code>SITE_MAP</code> en <code>js/nav.js</code>. Para agregar una página al menú:</p>
+    <pre><code>// Agregar una subpágina a Programas — no tocar nada más
+children:[
+  { label:'Nuevo programa', href:'programas/nuevo-programa.html', desc:'Descripción corta' },
+]</code></pre>
+    <p>Cada página declara su profundidad de carpeta con <code>&lt;body data-base="./"&gt;</code> (raíz) o <code>data-base="../"&gt;</code> (una carpeta adentro) — todas las rutas del header/footer se resuelven contra ese valor.</p>
+
+    <h2 id="estados">07 · Estados e interacción</h2>
+    <p>Todo componente interactivo define 5 estados como mínimo: default, hover, focus-visible, disabled, y success/error cuando aplica (ver <code>base.css</code> / <code>components.css</code>). El foco siempre usa <code>outline: 2px solid var(--nvc-patina-deep)</code> — nunca remover <code>:focus-visible</code> sin reemplazo accesible.</p>
+
+    <h2 id="animaciones">08 · Animaciones</h2>
+    <ul class="rule-list">
+      <li>Transiciones de UI: <code>var(--dur-fast)</code> (150ms) para hover/focus, <code>var(--dur-med)</code> (250ms) para paneles/drawers</li>
+      <li>Curva estándar: <code>var(--ease)</code> = <code>cubic-bezier(.4,0,.2,1)</code></li>
+      <li>Sin loops decorativos infinitos en contenido de página — reservar animación para micro-interacción con propósito</li>
+    </ul>
+
+    <h2 id="convenciones">09 · Convenciones y buenas prácticas</h2>
+    <ul class="rule-list">
+      <li>HTML canónico: cerrar cada etiqueta, comillas dobles en atributos, sin auto-cierre de elementos no-void</li>
+      <li>Nomenclatura de archivos: minúsculas, kebab-case, sin espacios ni acentos (<code>desarrollo-territorial.html</code>)</li>
+      <li>Contenido no confirmado se marca con el componente <code>.placeholder-block</code> + <code>.placeholder-flag</code> — nunca se inventan cifras, aliados o testimonios</li>
+      <li>El logotipo aprobado no se recolorea, deforma ni reconstruye — usar siempre <code>assets/logo/nvc-logo-oficial.png</code> como fuente única</li>
+    </ul>
+
+    <h2 id="crecimiento">10 · Cómo agregar una página nueva</h2>
+    <ol style="color:var(--nvc-ink-soft);font-size:15px;line-height:1.8;">
+      <li>Duplicar la página existente más parecida en estructura (landing, detalle, o listado)</li>
+      <li>Ajustar <code>&lt;title&gt;</code>, <code>&lt;meta name="description"&gt;</code>, <code>data-page</code> y el <code>data-trail</code> del breadcrumb</li>
+      <li>Agregar la entrada correspondiente al <code>SITE_MAP</code> en <code>js/nav.js</code> (una sola vez, se propaga a header/footer/mega-menú)</li>
+      <li>Reutilizar únicamente componentes ya definidos en <code>components.css</code></li>
+    </ol>
+
+    <div style="margin-top:56px;padding-top:32px;border-top:1px solid var(--nvc-line);">
+      <a class="btn btn-secondary" href="index.html">← Volver al Design System</a>
+    </div>
+  </main>
+</div>
+
+<footer id="nvc-footer"></footer>
+<script src="../js/nav.js"></script>
+</body>
+</html>
