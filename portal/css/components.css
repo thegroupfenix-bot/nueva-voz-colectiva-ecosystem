@@ -13,6 +13,8 @@
 .card-hover:hover .card-media{transform:scale(1.02);}
 .card h3{font-size:19px;margin:14px 0 8px;}
 .card p{font-size:14.5px;color:var(--nvc-ink-soft);}
+.card > .card-pad{display:flex;flex-direction:column;align-items:flex-start;height:100%;}
+.card > .card-pad > a:last-child{margin-top:auto !important;padding-top:14px;}
 .card .card-meta{display:flex;gap:10px;align-items:center;margin-top:14px;font-family:var(--font-cond);
   font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--nvc-ink-soft);}
 .card-dark{background:var(--nvc-navy);color:#fff;border-color:transparent;}
@@ -82,6 +84,13 @@ table.nvc-table{width:100%;border-collapse:collapse;font-size:14.5px;}
 .nvc-table td{padding:14px 16px;border-bottom:1px solid var(--nvc-line);color:var(--nvc-ink);}
 .nvc-table tr:last-child td{border-bottom:none;}
 .nvc-table tr:hover td{background:rgba(22,41,63,.02);}
+
+@media(max-width:620px){
+  table.nvc-table{table-layout:fixed;font-size:12px;}
+  .nvc-table th,.nvc-table td{padding:9px 6px;overflow-wrap:anywhere;word-break:break-word;}
+  .nvc-table th{font-size:10px;letter-spacing:.03em;}
+  .nvc-table .btn{width:100%;padding:8px 6px;font-size:10px;white-space:normal;}
+}
 
 /* ---------- ALERTS ---------- */
 .alert{display:flex;gap:12px;align-items:flex-start;padding:16px 18px;border-radius:var(--r-md);font-size:14.5px;border:1px solid transparent;}
