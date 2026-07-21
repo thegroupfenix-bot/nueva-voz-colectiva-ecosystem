@@ -2,6 +2,8 @@
    NVC — LAYOUT: header, mega-menú, footer, hero, breadcrumb, secciones
    ============================================================ */
 
+html,body{overflow-x:hidden;}
+
 /* ---------- SECTION CHROME ---------- */
 section{padding:var(--sp-9) 0;border-bottom:1px solid var(--nvc-line);}
 section.dark{background:var(--nvc-navy);border-bottom:none;}
@@ -107,6 +109,45 @@ section.dark .eyebrow::before{background:var(--nvc-copper-soft);}
 .page-hero .hero-actions{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
 .hero-home{min-height:min(88vh,860px);display:flex;flex-direction:column;justify-content:center;padding:var(--sp-9) 0;}
 .hero-home h1{font-size:var(--fs-display);}
+
+/* ---------- HOME VIEWPORT SCALE ---------- */
+body[data-page="inicio"] .wrap{
+  max-width:1280px;margin:0 auto;
+  padding-left:clamp(24px,5vw,80px);padding-right:clamp(24px,5vw,80px);
+}
+body[data-page="inicio"] .nvc-header-in{
+  max-width:1600px;gap:8px;padding:12px clamp(24px,3vw,56px);
+}
+body[data-page="inicio"] .nvc-brand img{height:56px;width:auto;}
+body[data-page="inicio"] .nvc-nav{gap:0;min-width:0;}
+body[data-page="inicio"] .nvc-nav-item>a,
+body[data-page="inicio"] .nvc-nav-item>button{
+  font-size:12px;letter-spacing:.04em;padding:9px 7px;gap:4px;
+}
+body[data-page="inicio"] .nvc-nav-item>a::after{left:7px;right:7px;}
+body[data-page="inicio"] .nvc-actions{gap:6px;}
+body[data-page="inicio"] .lang-switch button{padding:7px 8px;}
+body[data-page="inicio"] .nvc-actions .btn-sm{padding:9px 12px;}
+body[data-page="inicio"] .hero-home{
+  min-height:0;justify-content:center;
+  padding-top:clamp(70px,8vw,120px);
+  padding-bottom:clamp(70px,8vw,120px);
+}
+body[data-page="inicio"] .hero-home h1{
+  font-size:clamp(3rem,4.5vw,5rem);line-height:1.02;
+  max-width:1050px !important;
+}
+
+@media(max-width:1599px){
+  body[data-page="inicio"] .nvc-nav{display:none;}
+  body[data-page="inicio"] .nvc-burger{display:block;}
+}
+
+@media(max-width:620px){
+  body[data-page="inicio"] .nvc-header-in{padding-top:10px;padding-bottom:10px;}
+  body[data-page="inicio"] .nvc-brand img{height:50px;}
+  body[data-page="inicio"] .lang-switch{display:none;}
+}
 
 /* ---------- FOOTER ---------- */
 .nvc-footer{background:var(--nvc-navy-deep);color:rgba(255,255,255,.68);padding:var(--sp-8) 0 var(--sp-6);}
