@@ -38,37 +38,153 @@
 
 <section class="page-hero" data-screen-label="Hero">
   <div class="wrap">
-    <span class="eyebrow" style="color:var(--nvc-copper-soft)">Portafolio</span>
+    <span class="eyebrow" style="color:var(--nvc-copper-soft)">Líneas institucionales</span>
     <h1 style="margin-top:18px;">Proyectos</h1>
-    <p class="lead">Proyectos activos y cerrados que ponen en práctica los programas del ecosistema en el territorio.</p>
-    <div class="hero-actions"><a class="btn btn-primary" href="#proyectos-listado">Ver proyectos</a></div>
+    <p class="lead">Cuatro líneas orientan la formulación de iniciativas territoriales, educativas, de investigación y cooperación de Nueva Voz Colectiva.</p>
+    <div class="hero-actions"><a class="btn btn-primary" href="#lineas-institucionales">Explorar las líneas</a></div>
   </div>
 </section>
 
 <nav id="nvc-breadcrumb" class="nvc-breadcrumb" data-trail='[{"label":"Proyectos"}]' aria-label="Breadcrumb"></nav>
 
 
-<section id="proyectos-listado" data-screen-label="Filtros y listado">
+<section id="lineas-institucionales" class="project-lines-section" data-screen-label="Líneas institucionales">
   <div class="wrap">
-    <div class="filter-row" style="margin-bottom:var(--sp-6);">
-      <button class="filter-chip active">Todos</button>
-      <button class="filter-chip">Activos</button>
-      <button class="filter-chip">Cerrados</button>
+    <div class="sec-head">
+      <span class="eyebrow">Estructura de proyectos</span>
+      <h2>Cuatro líneas para formular iniciativas responsables</h2>
+      <p class="lead">Las líneas presentan capacidades institucionales y ámbitos de trabajo. No corresponden a proyectos ejecutados ni a resultados de impacto.</p>
     </div>
-    
-<div class="placeholder-block" style="padding:var(--sp-6);">
-  <span class="placeholder-flag">Contenido de ejemplo — reemplazar con proyectos reales</span>
-  
-      <div class="grid g3">
-        <a class="card card-hover" href="proyecto-piloto-territorial.html" style="text-decoration:none;color:inherit;background:#fff;">
-          <div class="card-media">Imagen del proyecto</div><div class="card-pad">
-          <span class="badge badge-success">Activo</span><h3 style="margin-top:10px;">Proyecto piloto territorial</h3><p>Descripción breve del proyecto — ejemplo de ficha.</p></div>
-        </a>
-        <div class="card" style="background:#fff;"><div class="card-media">Imagen del proyecto</div><div class="card-pad"><span class="badge">Por definir</span><h3 style="margin-top:10px;">Proyecto por definir</h3><p>Espacio reservado para próximo proyecto.</p></div></div>
-        <div class="card" style="background:#fff;"><div class="card-media">Imagen del proyecto</div><div class="card-pad"><span class="badge">Por definir</span><h3 style="margin-top:10px;">Proyecto por definir</h3><p>Espacio reservado para próximo proyecto.</p></div></div>
-      </div>
-    
-</div>
+
+    <nav class="filter-row project-line-nav" aria-label="Navegación por líneas institucionales">
+      <a class="filter-chip active" href="#lineas-institucionales">Todas las líneas</a>
+      <a class="filter-chip" href="#linea-territorial">Territoriales</a>
+      <a class="filter-chip" href="#linea-educativa">Educativos</a>
+      <a class="filter-chip" href="#linea-investigacion">Investigación</a>
+      <a class="filter-chip" href="#linea-cooperacion">Cooperación</a>
+    </nav>
+
+    <div class="project-lines-grid">
+      <article class="project-line-card" id="linea-territorial">
+        <div class="project-line-media">
+          <img src="../assets/images/projects/proyecto-territorial-v2.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Recorrido territorial y diálogo con actores locales" />
+          <span class="project-line-status">Línea institucional</span>
+        </div>
+        <div class="project-line-content">
+          <div class="project-line-heading">
+            <span class="project-line-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 19V9l8-5 8 5v10M8 19v-6h8v6M3 19h18" /></svg>
+            </span>
+            <h3>Proyectos Territoriales</h3>
+          </div>
+          <p>Iniciativas orientadas al fortalecimiento de capacidades locales, organización comunitaria, participación ciudadana y construcción de soluciones para el desarrollo territorial.</p>
+          <div class="project-line-focus"><span>Enfoque</span><strong>Capacidades locales y participación ciudadana.</strong></div>
+          <a class="btn btn-secondary" href="../programas/desarrollo-territorial.html">Conocer el enfoque</a>
+        </div>
+      </article>
+
+      <article class="project-line-card" id="linea-educativa">
+        <div class="project-line-media">
+          <img src="../assets/images/projects/proyecto-educativo-v2.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Espacio de diálogo y formación con integrantes de una comunidad" />
+          <span class="project-line-status">Línea institucional</span>
+        </div>
+        <div class="project-line-content">
+          <div class="project-line-heading">
+            <span class="project-line-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="m3 7 9-4 9 4-9 4-9-4Z M6 9.5V15c3.2 2.4 8.8 2.4 12 0V9.5M21 7v7" /></svg>
+            </span>
+            <h3>Proyectos Educativos</h3>
+          </div>
+          <p>Procesos de formación, educación cívica, liderazgo y producción de recursos orientados al aprendizaje ciudadano y al fortalecimiento institucional.</p>
+          <div class="project-line-focus"><span>Enfoque</span><strong>Aprendizaje ciudadano y liderazgo.</strong></div>
+          <a class="btn btn-secondary" href="../programas/educacion-civica.html">Conocer el enfoque</a>
+        </div>
+      </article>
+
+      <article class="project-line-card" id="linea-investigacion">
+        <div class="project-line-media">
+          <img src="../assets/images/projects/proyecto-investigacion-v2.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Conversación y recolección de información en un contexto local" />
+          <span class="project-line-status">Línea institucional</span>
+        </div>
+        <div class="project-line-content">
+          <div class="project-line-heading">
+            <span class="project-line-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.5 15.5 5 5M8 8h5M8 11h3" /></svg>
+            </span>
+            <h3>Proyectos de Investigación</h3>
+          </div>
+          <p>Estudios, diagnósticos, metodologías y procesos de generación de conocimiento aplicados a ciudadanía, participación, liderazgo y desarrollo territorial.</p>
+          <div class="project-line-focus"><span>Enfoque</span><strong>Conocimiento aplicado y documentación.</strong></div>
+          <a class="btn btn-secondary" href="../biblioteca/index.html">Explorar conocimiento</a>
+        </div>
+      </article>
+
+      <article class="project-line-card" id="linea-cooperacion">
+        <div class="project-line-media">
+          <img src="../assets/images/projects/proyecto-cooperacion-v2.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diálogo entre representantes institucionales" />
+          <span class="project-line-status">Línea institucional</span>
+        </div>
+        <div class="project-line-content">
+          <div class="project-line-heading">
+            <span class="project-line-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M8.5 13.5 11 16a2.1 2.1 0 0 0 3 0l4.5-4.5M15.5 10.5 13 8a2.1 2.1 0 0 0-3 0l-4.5 4.5M3 10l3-3 3 3M21 14l-3 3-3-3" /></svg>
+            </span>
+            <h3>Proyectos de Cooperación</h3>
+          </div>
+          <p>Iniciativas desarrolladas con entidades públicas, organizaciones sociales, instituciones académicas, empresas y organismos de cooperación.</p>
+          <div class="project-line-focus"><span>Enfoque</span><strong>Articulación y desarrollo conjunto.</strong></div>
+          <a class="btn btn-secondary" href="../cooperacion-internacional.html">Conocer el enfoque</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="como-se-desarrolla" class="project-process-section" data-screen-label="Desarrollo de proyectos">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Ruta institucional</span>
+      <h2>Cómo se desarrolla un proyecto en Nueva Voz Colectiva</h2>
+      <p class="lead">Cada iniciativa sigue una secuencia que facilita la toma de decisiones, la documentación y la evaluación responsable.</p>
+    </div>
+    <ol class="project-process" aria-label="Etapas de desarrollo de un proyecto">
+      <li><span>01</span><strong>Identificación de necesidad</strong></li>
+      <li><span>02</span><strong>Formulación</strong></li>
+      <li><span>03</span><strong>Validación institucional</strong></li>
+      <li><span>04</span><strong>Ejecución</strong></li>
+      <li><span>05</span><strong>Evaluación y memoria</strong></li>
+    </ol>
+  </div>
+</section>
+
+<section class="project-principles-section" data-screen-label="Principios de ejecución">
+  <div class="wrap project-principles-layout">
+    <div>
+      <span class="eyebrow">Marco de actuación</span>
+      <h2 style="margin-top:16px;">Principios de ejecución</h2>
+      <p class="lead" style="margin-top:14px;">Criterios que orientan la formulación y el desarrollo institucional de las iniciativas.</p>
+    </div>
+    <ul class="project-principles" aria-label="Principios de ejecución">
+      <li>Participación</li>
+      <li>Trazabilidad</li>
+      <li>Pertinencia territorial</li>
+      <li>Cooperación</li>
+      <li>Documentación</li>
+      <li>Evaluación</li>
+    </ul>
+  </div>
+</section>
+
+<section class="dark project-cta-section" data-screen-label="Participación y cooperación">
+  <div class="wrap project-cta-layout">
+    <div>
+      <span class="eyebrow">Construcción conjunta</span>
+      <h2>Conversemos sobre iniciativas con propósito institucional</h2>
+    </div>
+    <div class="project-cta-actions">
+      <a class="btn btn-primary" href="../participa.html">Proponer una iniciativa</a>
+      <a class="btn btn-ghost" href="../cooperacion-internacional.html">Cooperar con un proyecto</a>
+    </div>
   </div>
 </section>
 
