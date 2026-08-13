@@ -4,6 +4,9 @@
    página nueva = agregar una fila a SITE_MAP. No tocar el resto.
    ============================================================ */
 (function(){
+  const HUMANITARIAN_CAMPAIGN_ACTIVE = true;
+  const HUMANITARIAN_CAMPAIGN_SESSION_KEY = 'nvc-humanitarian-campaign-dismissed';
+
   const ICONS = {
     inicio:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 11 12 4l8 7"/><path d="M6 10v9h12v-9"/></svg>',
     quienes: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1.2-4 4-6 7-6s5.8 2 7 6"/></svg>',
@@ -177,9 +180,115 @@
     }).join('');
   }
 
+  function renderHumanitarianCampaignAlert(){
+    const isCampaignPage = document.body.getAttribute('data-page') === 'ayuda-humanitaria'
+      || /\/ayuda-humanitaria\.html$/i.test(window.location.pathname);
+    let dismissed = false;
+
+    try{
+      dismissed = window.sessionStorage.getItem(HUMANITARIAN_CAMPAIGN_SESSION_KEY) === 'true';
+    }catch(e){
+      dismissed = false;
+    }
+
+    if(!HUMANITARIAN_CAMPAIGN_ACTIVE || isCampaignPage || dismissed) return;
+
+    const alert = document.createElement('div');
+    alert.className = 'humanitarian-campaign-alert';
+    alert.hidden = true;
+    alert.innerHTML = `
+      <button class="humanitarian-campaign-alert-backdrop" type="button" tabindex="-1" aria-label="Cerrar alerta de campaña"></button>
+      <section class="humanitarian-campaign-alert-panel" role="dialog" aria-modal="true" aria-labelledby="humanitarian-campaign-alert-title" aria-describedby="humanitarian-campaign-alert-description">
+        <button class="humanitarian-campaign-alert-close" type="button" aria-label="Cerrar alerta">&times;</button>
+        <div class="humanitarian-campaign-alert-brand">
+          <img class="humanitarian-campaign-alert-logo" src="${base()}assets/logo/nvc-logo-oficial.png" alt="Nueva Voz Colectiva">
+          <span>CAMPAÑA ACTIVA</span>
+        </div>
+        <div class="humanitarian-campaign-alert-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M16 28S5 21.2 5 12.8A6.8 6.8 0 0 1 16 7.5a6.8 6.8 0 0 1 11 5.3C27 21.2 16 28 16 28Z"/><path d="M16 10v11M10.5 15.5h11"/></svg>
+        </div>
+        <p class="humanitarian-campaign-alert-eyebrow">Alerta humanitaria</p>
+        <h2 id="humanitarian-campaign-alert-title">VALLE SOLIDARIO</h2>
+        <p class="humanitarian-campaign-alert-lead">Tu ayuda puede llegar hoy a una familia que la necesita.</p>
+        <p class="humanitarian-campaign-alert-copy" id="humanitarian-campaign-alert-description">Estamos recibiendo alimentos, agua, elementos de higiene, productos para bebés, colchonetas y apoyo para mascotas.</p>
+        <div class="humanitarian-campaign-alert-actions">
+          <a class="btn btn-primary" href="/ayuda-humanitaria.html">QUIERO AYUDAR</a>
+          <a class="btn btn-outline" href="https://wa.me/573013887972?text=Hola.%20Deseo%20realizar%20una%20donaci%C3%B3n%20para%20la%20campa%C3%B1a%20de%20ayuda%20humanitaria%20de%20Nueva%20Voz%20Colectiva%20y%20necesito%20solicitar%20recolecci%C3%B3n%20a%20domicilio." target="_blank" rel="noopener">SOLICITAR RECOLECCIÓN</a>
+        </div>
+        <p class="humanitarian-campaign-alert-motto">42 municipios. Un mismo corazón.</p>
+      </section>`;
+
+    document.body.appendChild(alert);
+
+    const panel = alert.querySelector('.humanitarian-campaign-alert-panel');
+    const closeButton = alert.querySelector('.humanitarian-campaign-alert-close');
+    const backdrop = alert.querySelector('.humanitarian-campaign-alert-backdrop');
+    const actionLinks = alert.querySelectorAll('.humanitarian-campaign-alert-actions a');
+    let previousFocus = null;
+    let open = false;
+
+    function saveDismissal(){
+      try{
+        window.sessionStorage.setItem(HUMANITARIAN_CAMPAIGN_SESSION_KEY, 'true');
+      }catch(e){ /* sessionStorage can be unavailable in restricted contexts */ }
+    }
+
+    function closeAlert(restoreFocus = true){
+      if(!open) return;
+      open = false;
+      saveDismissal();
+      alert.classList.remove('is-open');
+      document.body.classList.remove('humanitarian-campaign-alert-open');
+      window.setTimeout(function(){ alert.hidden = true; }, 220);
+      if(restoreFocus && previousFocus instanceof HTMLElement && previousFocus.isConnected){
+        previousFocus.focus();
+      }
+    }
+
+    function handleKeydown(event){
+      if(!open) return;
+      if(event.key === 'Escape'){
+        event.preventDefault();
+        closeAlert();
+        return;
+      }
+      if(event.key !== 'Tab') return;
+      const focusable = Array.from(panel.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'));
+      if(!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if(event.shiftKey && document.activeElement === first){
+        event.preventDefault();
+        last.focus();
+      }else if(!event.shiftKey && document.activeElement === last){
+        event.preventDefault();
+        first.focus();
+      }
+    }
+
+    function openAlert(){
+      if(open) return;
+      previousFocus = document.activeElement;
+      alert.hidden = false;
+      document.body.classList.add('humanitarian-campaign-alert-open');
+      window.requestAnimationFrame(function(){
+        alert.classList.add('is-open');
+        open = true;
+        closeButton.focus();
+      });
+    }
+
+    closeButton.addEventListener('click', function(){ closeAlert(); });
+    backdrop.addEventListener('click', function(){ closeAlert(); });
+    actionLinks.forEach(function(link){ link.addEventListener('click', saveDismissal); });
+    document.addEventListener('keydown', handleKeydown);
+    window.setTimeout(openAlert, 2500);
+  }
+
   document.addEventListener('DOMContentLoaded', function(){
     renderHeader();
     renderFooter();
     renderBreadcrumb();
+    renderHumanitarianCampaignAlert();
   });
 })();
