@@ -436,3 +436,111 @@ table.nvc-table{width:100%;border-collapse:collapse;font-size:14.5px;}
 .state-demo .state-cell{display:flex;flex-direction:column;align-items:flex-start;gap:10px;}
 .state-demo .state-cell .tag{font-family:var(--font-cond);font-size:11px;text-transform:uppercase;
   letter-spacing:.06em;color:var(--nvc-ink-soft);font-weight:700;}
+
+/* ---------- CAMPAÑA TEMPORAL · VALLE SOLIDARIO ---------- */
+.humanitarian-home-banner{display:block;padding:0;background:var(--nvc-patina);color:#fff;border-bottom:0;}
+.humanitarian-home-banner-inner{min-height:128px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:22px;padding-top:20px;padding-bottom:20px;}
+.humanitarian-home-banner-mark{width:56px;height:56px;display:grid;place-items:center;border-radius:18px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.26);color:#fff;}
+.humanitarian-home-banner-mark svg{width:30px;height:30px;}
+.humanitarian-home-banner-copy span,.humanitarian-kicker,.humanitarian-card-status,.humanitarian-visual-label{font-family:var(--font-cond);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.13em;}
+.humanitarian-home-banner-copy span{display:block;color:#fff;margin-bottom:5px;}
+.humanitarian-home-banner-copy h2{font-size:clamp(24px,2.1vw,32px);line-height:1;color:#fff;}
+.humanitarian-home-banner-copy p{max-width:780px;margin-top:8px;color:rgba(255,255,255,.88);font-size:14.5px;line-height:1.45;}
+.humanitarian-home-banner .btn{white-space:nowrap;background:var(--nvc-copper);border-color:var(--nvc-copper);}
+
+.humanitarian-hero{position:relative;overflow:hidden;padding:clamp(44px,5vw,72px) 0;background:linear-gradient(120deg,var(--nvc-navy-deep),var(--nvc-navy) 68%,#1f4b4a);border-bottom:0;}
+.humanitarian-hero::before{content:"";position:absolute;width:520px;height:520px;right:-150px;top:-270px;border:1px solid rgba(216,168,118,.22);border-radius:50%;box-shadow:0 0 0 70px rgba(216,168,118,.035),0 0 0 140px rgba(94,142,126,.055);}
+.humanitarian-hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,360px);align-items:center;gap:clamp(36px,6vw,84px);}
+.humanitarian-kicker{display:flex;align-items:center;gap:12px;color:var(--nvc-copper-soft);}
+.humanitarian-kicker::before{content:"";width:28px;height:2px;background:currentColor;}
+.humanitarian-hero h1{margin-top:18px;font-size:clamp(3.1rem,5vw,5.2rem);line-height:.95;color:#fff;}
+.humanitarian-descriptor{margin-top:14px;font-family:var(--font-cond);font-size:clamp(16px,1.5vw,21px);font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--nvc-patina-soft);}
+.humanitarian-message{max-width:620px;margin-top:20px;font-size:clamp(20px,2vw,28px);font-weight:700;line-height:1.2;color:#fff;}
+.humanitarian-motto{margin-top:10px;color:rgba(255,255,255,.74);font-weight:600;}
+.humanitarian-hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+.humanitarian-hero-actions .btn{font-size:12px;}
+.humanitarian-identity{min-height:310px;padding:26px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(255,255,255,.18);border-radius:26px;background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.045));box-shadow:0 26px 60px rgba(3,12,23,.28);backdrop-filter:blur(5px);}
+.humanitarian-identity-top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;}
+.humanitarian-identity img{width:auto;height:82px;object-fit:contain;border-radius:14px;background:#fff;padding:7px;}
+.humanitarian-identity-code{font-family:var(--font-cond);font-size:11px;font-weight:700;letter-spacing:.15em;color:var(--nvc-copper-soft);}
+.humanitarian-identity-symbol{width:92px;height:92px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(255,255,255,.18);color:var(--nvc-copper-soft);}
+.humanitarian-identity-symbol svg{width:48px;height:48px;}
+.humanitarian-identity strong{display:block;font-size:26px;color:#fff;}
+.humanitarian-identity p{margin-top:8px;font-size:14px;color:rgba(255,255,255,.7);}
+
+.humanitarian-intro{max-width:760px;}
+.humanitarian-needs-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;margin-top:34px;}
+.humanitarian-category-nav{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;}
+.humanitarian-category-nav a{display:inline-flex;align-items:center;min-height:40px;padding:8px 14px;border:1px solid rgba(15,64,70,.22);border-radius:999px;background:#fff;color:var(--nvc-navy);font-size:.84rem;font-weight:700;text-decoration:none;transition:border-color .2s ease,background-color .2s ease,color .2s ease,transform .2s ease;}
+.humanitarian-category-nav a:hover,.humanitarian-category-nav a:focus-visible{border-color:var(--nvc-patina);background:var(--nvc-patina);color:#fff;transform:translateY(-1px);}
+.humanitarian-need-card{display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid var(--nvc-line);border-radius:var(--r-lg);overflow:hidden;box-shadow:0 12px 34px rgba(22,41,63,.06);}
+.humanitarian-need-card:last-child{grid-column:1/-1;width:min(100%,720px);justify-self:center;}
+.humanitarian-card-media{display:block;margin:0;padding:18px;overflow:hidden;background:var(--surface-2);border-bottom:1px solid var(--nvc-line);text-align:center;}
+.humanitarian-card-media[hidden]{display:none;}
+.humanitarian-card-media img{display:block;width:100%;height:auto;max-height:none;margin:0 auto;object-fit:contain;object-position:center;background:var(--surface-2);}
+.humanitarian-card-body{display:flex;flex-direction:column;flex:1;padding:22px;}
+.humanitarian-card-status{color:var(--nvc-patina-deep);}
+.humanitarian-card-body h3{margin-top:9px;font-size:21px;}
+.humanitarian-card-body>p{margin-top:10px;color:var(--nvc-ink-soft);font-size:14px;line-height:1.5;}
+.humanitarian-card-detail{margin-top:auto;padding-top:20px;}
+
+.humanitarian-location{background:var(--surface-2);}
+.humanitarian-location-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:28px;align-items:stretch;}
+.humanitarian-location-card,.humanitarian-contact-card{padding:clamp(26px,4vw,44px);border-radius:var(--r-lg);}
+.humanitarian-location-card{background:var(--nvc-navy);color:#fff;}
+.humanitarian-location-card h2{margin-top:16px;color:#fff;}
+.humanitarian-address{margin-top:28px;padding-left:19px;border-left:3px solid var(--nvc-copper);font-size:20px;line-height:1.55;}
+.humanitarian-website{display:inline-block;margin-top:20px;color:var(--nvc-patina-soft);font-weight:700;text-underline-offset:4px;overflow-wrap:anywhere;}
+.humanitarian-website:hover{color:#fff;}
+.humanitarian-hours{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px;}
+.humanitarian-hours div{padding:16px;border:1px solid var(--nvc-line-on-dark);border-radius:12px;}
+.humanitarian-hours span{display:block;font-family:var(--font-cond);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--nvc-copper-soft);}
+.humanitarian-hours strong{display:block;margin-top:6px;color:#fff;}
+.humanitarian-contact-card{background:#fff;border:1px solid var(--nvc-line);}
+.humanitarian-contact-list{display:grid;gap:10px;margin-top:22px;}
+.humanitarian-contact-list a{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 15px;border:1px solid var(--nvc-line);border-radius:12px;text-decoration:none;font-weight:700;color:var(--nvc-navy);}
+.humanitarian-contact-list a span{font-family:var(--font-cond);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--nvc-patina-deep);}
+.humanitarian-contact-card>.btn{width:100%;justify-content:center;margin-top:20px;text-align:center;}
+
+.humanitarian-process{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:32px;counter-reset:humanitarian-step;}
+.humanitarian-process li{counter-increment:humanitarian-step;list-style:none;position:relative;min-height:128px;padding:20px 15px;border:1px solid var(--nvc-line);border-radius:14px;background:#fff;}
+.humanitarian-process li::before{content:counter(humanitarian-step,decimal-leading-zero);display:block;font-family:var(--font-cond);font-weight:700;color:var(--nvc-copper);letter-spacing:.1em;margin-bottom:28px;}
+.humanitarian-process strong{font-size:14px;color:var(--nvc-navy);}
+.humanitarian-transparency{background:var(--nvc-navy);}
+.humanitarian-transparency-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:44px;align-items:start;}
+.humanitarian-transparency h2{margin-top:16px;color:#fff;}
+.humanitarian-status-list{display:grid;gap:10px;}
+.humanitarian-status-list li{list-style:none;padding:15px 17px 15px 46px;position:relative;border:1px solid var(--nvc-line-on-dark);border-radius:12px;color:rgba(255,255,255,.82);}
+.humanitarian-status-list li::before{content:"";position:absolute;left:18px;top:19px;width:10px;height:10px;border-radius:50%;background:var(--nvc-patina-soft);box-shadow:0 0 0 5px rgba(154,192,179,.12);}
+.humanitarian-share{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;}
+.humanitarian-share .btn{min-width:190px;justify-content:center;}
+.humanitarian-copy-status{min-height:22px;margin-top:12px;text-align:center;color:var(--nvc-patina-deep);font-size:13px;font-weight:600;}
+
+@media(max-width:1024px){
+  .humanitarian-needs-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .humanitarian-process{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:780px){
+  .humanitarian-home-banner-inner{grid-template-columns:auto 1fr;}
+  .humanitarian-home-banner .btn{grid-column:1/-1;width:100%;justify-content:center;}
+  .humanitarian-hero-inner,.humanitarian-location-grid,.humanitarian-transparency-grid{grid-template-columns:1fr;}
+  .humanitarian-identity{display:none;}
+  .humanitarian-hero-actions{display:grid;grid-template-columns:1fr;}
+  .humanitarian-hero-actions .btn{width:100%;justify-content:center;}
+}
+@media(max-width:620px){
+  .humanitarian-home-banner-inner{grid-template-columns:1fr;gap:12px;padding-top:18px;padding-bottom:18px;}
+  .humanitarian-home-banner-mark{display:none;}
+  .humanitarian-home-banner-copy h2{font-size:25px;}
+  .humanitarian-hero{padding:38px 0 42px;}
+  .humanitarian-hero h1{font-size:2.75rem;}
+  .humanitarian-message{font-size:20px;}
+  .humanitarian-needs-grid{grid-template-columns:1fr;}
+  .humanitarian-need-card:last-child{grid-column:auto;width:100%;}
+  .humanitarian-card-media{padding:14px;}
+  .humanitarian-hours{grid-template-columns:1fr;}
+  .humanitarian-process{grid-template-columns:repeat(2,1fr);}
+  .humanitarian-process li{min-height:110px;}
+  .humanitarian-share{display:grid;grid-template-columns:1fr;}
+  .humanitarian-share .btn{width:100%;}
+}
