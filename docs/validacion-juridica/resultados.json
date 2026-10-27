@@ -1,0 +1,114 @@
+[
+  {
+    "width": 1440,
+    "height": 900,
+    "logo": [
+      {
+        "width": 35.15625,
+        "height": 56,
+        "naturalWidth": 648,
+        "naturalHeight": 1032
+      },
+      {
+        "width": 69.0625,
+        "height": 110,
+        "naturalWidth": 648,
+        "naturalHeight": 1032
+      }
+    ],
+    "geometry": {
+      "viewport": 1440,
+      "scrollWidth": 1440,
+      "overflow": [],
+      "fontSize": "16px"
+    },
+    "errors": [],
+    "links": "Nosotros y pie de página (incluida ruta anidada): correctos"
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "logo": [
+      {
+        "width": 35.15625,
+        "height": 56,
+        "naturalWidth": 648,
+        "naturalHeight": 1032
+      },
+      {
+        "width": 69.0625,
+        "height": 110,
+        "naturalWidth": 648,
+        "naturalHeight": 1032
+      }
+    ],
+    "geometry": {
+      "viewport": 1920,
+      "scrollWidth": 1920,
+      "overflow": [],
+      "fontSize": "16px"
+    },
+    "errors": [],
+    "links": "Nosotros y pie de página (incluida ruta anidada): correctos"
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "logo": [
+      {
+        "width": 31.390625,
+        "height": 50,
+        "naturalWidth": 648,
+        "naturalHeight": 1032
+      },
+      {
+        "width": 69.0625,
+        "height": 110,
+        "naturalWidth": 648,
+        "naturalHeight": 1032
+      }
+    ],
+    "geometry": {
+      "viewport": 390,
+      "scrollWidth": 390,
+      "overflow": [],
+      "fontSize": "16px"
+    },
+    "errors": [],
+    "links": "Nosotros y pie de página (incluida ruta anidada): correctos"
+  },
+  {
+    "forms": [
+      {
+        "page": "contacto.html",
+        "inlineHandler": "return false",
+        "action": null,
+        "fieldsEditable": true,
+        "submissionPrevented": true,
+        "scrollWidth": 390,
+        "viewport": 390,
+        "requestsAfterClick": 0,
+        "deliveryWorks": false,
+        "reason": "Limitación preexistente: onsubmit=\"return false\", sin servicio de envío conectado."
+      },
+      {
+        "page": "participa.html",
+        "inlineHandler": "return false",
+        "action": null,
+        "fieldsEditable": true,
+        "submissionPrevented": true,
+        "scrollWidth": 390,
+        "viewport": 390,
+        "requestsAfterClick": 0,
+        "deliveryWorks": false,
+        "reason": "Limitación preexistente: onsubmit=\"return false\", sin servicio de envío conectado."
+      }
+    ],
+    "allPublicationChecksPassed": false
+  },
+  {
+    "protectedFilesUnchanged": 61,
+    "documentVerification": "Nueve datos contrastados el 27/10/2026 con los PDF aportados de Cámara de Comercio y RUT, ambos del 23/10/2026; ver INFORME.md",
+    "campaign": "Cierre anterior conservado"
+  }
+]

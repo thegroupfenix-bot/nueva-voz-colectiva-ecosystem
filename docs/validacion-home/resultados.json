@@ -1,0 +1,124 @@
+[
+  {
+    "width": 1440,
+    "height": 900,
+    "metrics": {
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "logo": {
+        "x": 43.1875,
+        "y": 10,
+        "width": 47.078125,
+        "height": 75,
+        "right": 90.265625,
+        "bottom": 85
+      },
+      "nav": {
+        "x": 110.265625,
+        "y": 28.90625,
+        "width": 1103.984375,
+        "height": 37.1875,
+        "right": 1214.25,
+        "bottom": 66.09375
+      },
+      "actions": {
+        "x": 1234.25,
+        "y": 31.5,
+        "width": 162.5625,
+        "height": 32,
+        "right": 1396.8125,
+        "bottom": 63.5
+      },
+      "title": "Construimos capacidades para fortalecer ciudadanía, liderazgo y desarrollo territorial.",
+      "titleFits": true,
+      "popup": false,
+      "campaignLinks": 0,
+      "fontsLoaded": true,
+      "overflow": []
+    },
+    "errors": []
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "metrics": {
+      "scrollWidth": 1920,
+      "viewport": 1920,
+      "logo": {
+        "x": 288,
+        "y": 10,
+        "width": 47.078125,
+        "height": 75,
+        "right": 335.078125,
+        "bottom": 85
+      },
+      "nav": {
+        "x": 355.078125,
+        "y": 28.90625,
+        "width": 1094.359375,
+        "height": 37.1875,
+        "right": 1449.4375,
+        "bottom": 66.09375
+      },
+      "actions": {
+        "x": 1469.4375,
+        "y": 31.5,
+        "width": 162.5625,
+        "height": 32,
+        "right": 1632,
+        "bottom": 63.5
+      },
+      "title": "Construimos capacidades para fortalecer ciudadanía, liderazgo y desarrollo territorial.",
+      "titleFits": true,
+      "popup": false,
+      "campaignLinks": 0,
+      "fontsLoaded": true,
+      "overflow": []
+    },
+    "errors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "metrics": {
+      "scrollWidth": 390,
+      "viewport": 390,
+      "logo": {
+        "x": 20,
+        "y": 10,
+        "width": 37.671875,
+        "height": 60,
+        "right": 57.671875,
+        "bottom": 70
+      },
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "actions": {
+        "x": 239.765625,
+        "y": 19,
+        "width": 130.234375,
+        "height": 42,
+        "right": 370,
+        "bottom": 61
+      },
+      "title": "Construimos capacidades para fortalecer ciudadanía, liderazgo y desarrollo territorial.",
+      "titleFits": true,
+      "popup": false,
+      "campaignLinks": 0,
+      "fontsLoaded": true,
+      "overflow": []
+    },
+    "errors": []
+  },
+  {
+    "pagesChecked": 25,
+    "brokenLinks": [],
+    "errors": []
+  }
+]
