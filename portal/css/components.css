@@ -448,23 +448,23 @@ table.nvc-table{width:100%;border-collapse:collapse;font-size:14.5px;}
 .humanitarian-home-banner-copy p{max-width:780px;margin-top:8px;color:rgba(255,255,255,.88);font-size:14.5px;line-height:1.45;}
 .humanitarian-home-banner .btn{white-space:nowrap;background:var(--nvc-copper);border-color:var(--nvc-copper);}
 
-.humanitarian-hero{position:relative;overflow:hidden;padding:clamp(48px,5vw,74px) 0;background:linear-gradient(120deg,var(--nvc-navy-deep),var(--nvc-navy) 68%,#1f4b4a);border-bottom:0;}
-.humanitarian-hero .wrap,.humanitarian-needs .wrap,.humanitarian-trust .wrap,.humanitarian-location .wrap,.humanitarian-guides .wrap{max-width:1280px;}
+.humanitarian-hero{position:relative;overflow:hidden;padding:clamp(38px,4.2vw,60px) 0;background:linear-gradient(120deg,var(--nvc-navy-deep),var(--nvc-navy) 68%,#1f4b4a);border-bottom:0;}
+.humanitarian-hero .wrap,.humanitarian-needs .wrap,.humanitarian-trust .wrap,.humanitarian-accountability .wrap,.humanitarian-location .wrap,.humanitarian-guides .wrap{max-width:1280px;}
 .humanitarian-hero::before{content:"";position:absolute;width:520px;height:520px;right:-150px;top:-270px;border:1px solid rgba(216,168,118,.22);border-radius:50%;box-shadow:0 0 0 70px rgba(216,168,118,.035),0 0 0 140px rgba(94,142,126,.055);}
-.humanitarian-hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,370px);align-items:center;gap:clamp(40px,6vw,86px);}
+.humanitarian-hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,340px);align-items:center;gap:clamp(30px,4vw,58px);}
 .humanitarian-kicker{display:flex;align-items:center;gap:12px;color:var(--nvc-copper-soft);}
 .humanitarian-kicker::before{content:"";width:28px;height:2px;background:currentColor;}
-.humanitarian-hero h1{margin-top:16px;font-size:clamp(3.5rem,5.7vw,5.65rem);line-height:.94;letter-spacing:-.035em;color:#fff;}
-.humanitarian-message{max-width:720px;margin-top:20px;font-size:clamp(25px,2.55vw,36px);font-weight:700;line-height:1.1;color:#fff;}
-.humanitarian-summary{max-width:680px;margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;line-height:1.55;}
-.humanitarian-hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px;}
+.humanitarian-hero h1{margin-top:14px;font-size:clamp(3.25rem,5vw,4.9rem);line-height:.96;letter-spacing:-.035em;color:#fff;}
+.humanitarian-message{max-width:780px;margin-top:17px;font-size:clamp(25px,2.45vw,35px);font-weight:700;line-height:1.1;color:#fff;}
+.humanitarian-summary{max-width:740px;margin-top:15px;color:rgba(255,255,255,.8);font-size:16px;line-height:1.5;}
+.humanitarian-hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;}
 .humanitarian-hero-actions .btn{min-height:52px;padding-inline:24px;font-size:12px;}
-.humanitarian-identity{min-height:310px;padding:26px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(255,255,255,.18);border-radius:26px;background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.045));box-shadow:0 26px 60px rgba(3,12,23,.28);backdrop-filter:blur(5px);}
+.humanitarian-identity{min-height:244px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(255,255,255,.18);border-radius:22px;background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.045));box-shadow:0 20px 46px rgba(3,12,23,.24);backdrop-filter:blur(5px);}
 .humanitarian-identity-top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;}
-.humanitarian-identity-logo{display:block;width:auto;max-width:68px;height:82px;object-fit:contain;border-radius:12px;background:#fff;padding:6px;}
+.humanitarian-identity-logo{display:block!important;width:auto!important;height:auto!important;max-width:56px!important;max-height:56px!important;object-fit:contain!important;border-radius:10px;background:#fff;padding:5px;flex:0 0 auto;}
 .humanitarian-identity-code{font-family:var(--font-cond);font-size:11px;font-weight:700;letter-spacing:.15em;color:var(--nvc-copper-soft);}
-.humanitarian-identity-symbol{width:92px;height:92px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(255,255,255,.18);color:var(--nvc-copper-soft);}
-.humanitarian-identity-symbol svg{width:48px;height:48px;}
+.humanitarian-identity-symbol{width:52px;height:52px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(255,255,255,.18);color:var(--nvc-copper-soft);flex:0 0 52px;}
+.humanitarian-identity-symbol svg{display:block!important;width:26px!important;height:26px!important;max-width:26px!important;max-height:26px!important;}
 .humanitarian-identity strong{display:block;font-size:26px;color:#fff;}
 .humanitarian-identity p{margin-top:8px;font-size:14px;color:rgba(255,255,255,.7);}
 
@@ -474,45 +474,54 @@ table.nvc-table{width:100%;border-collapse:collapse;font-size:14.5px;}
 .humanitarian-needs .humanitarian-intro h2{font-size:clamp(2.65rem,4vw,4.2rem);line-height:1;}
 .humanitarian-needs .humanitarian-intro .lead{max-width:760px;font-size:18px;line-height:1.55;}
 .humanitarian-needs{background:linear-gradient(180deg,#fff,var(--surface-2));}
-.humanitarian-needs-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:42px;}
-.humanitarian-need-card{display:flex;flex-direction:column;min-width:0;padding:30px;background:#fff;border:1px solid var(--nvc-line);border-radius:20px;box-shadow:0 12px 32px rgba(22,41,63,.055);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}
+.humanitarian-needs-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:32px;}
+.humanitarian-need-card{display:flex;flex-direction:column;min-width:0;overflow:hidden;background:#fff;border:1px solid var(--nvc-line);border-radius:18px;box-shadow:0 10px 26px rgba(22,41,63,.05);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}
 .humanitarian-need-card:hover{transform:translateY(-3px);border-color:rgba(15,64,70,.28);box-shadow:0 18px 40px rgba(22,41,63,.1);}
 .humanitarian-need-card:last-child{grid-column:2;}
-.humanitarian-card-icon{width:54px;height:54px;display:grid;place-items:center;border-radius:16px;background:rgba(94,142,126,.12);color:var(--nvc-patina-deep);}
-.humanitarian-card-icon svg{display:block;width:29px;height:29px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
-.humanitarian-need-card h3{margin-top:20px;font-size:25px;line-height:1.1;}
-.humanitarian-need-card>p{margin-top:12px;color:var(--nvc-ink-soft);font-size:15px;line-height:1.55;}
-.humanitarian-need-card ul{display:grid;gap:8px;margin-top:18px;padding:0;}
+.humanitarian-card-photo{display:block;width:100%;height:clamp(170px,13vw,190px);object-fit:cover;object-position:center;border-radius:0;background:var(--surface-2);}
+.humanitarian-card-body{display:flex;flex:1;flex-direction:column;padding:22px;}
+.humanitarian-need-card h3{font-size:25px;line-height:1.08;}
+.humanitarian-card-body>p{margin-top:12px;color:var(--nvc-ink-soft);font-size:15px;line-height:1.55;}
+.humanitarian-need-card ul{display:grid;gap:6px;margin-top:14px;padding:0;}
 .humanitarian-need-card li{position:relative;list-style:none;padding-left:18px;color:var(--nvc-ink-soft);font-size:14px;}
 .humanitarian-need-card li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--nvc-copper);}
-.humanitarian-card-detail{align-self:flex-start;min-height:46px;margin-top:auto;padding:14px 18px 0;}
+.humanitarian-card-detail{align-self:flex-start;min-height:42px;margin-top:auto;padding:10px 16px;}
 
 .humanitarian-trust{background:#fff;}
-.humanitarian-trust-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:center;gap:clamp(36px,6vw,80px);}
+.humanitarian-trust-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:center;gap:clamp(28px,4vw,52px);}
 .humanitarian-trust h2{margin-top:16px;font-size:clamp(2.65rem,4vw,4.15rem);line-height:1;}
 .humanitarian-trust .lead{margin-top:18px;font-size:17px;line-height:1.62;}
 
+.humanitarian-accountability{background:linear-gradient(135deg,#f5efe5,#eef4f0);}
+.humanitarian-accountability-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(420px,1.1fr);align-items:center;gap:clamp(28px,4vw,54px);}
+.humanitarian-accountability h2{margin-top:14px;font-size:clamp(2.2rem,3.2vw,3.5rem);line-height:1.04;}
+.humanitarian-accountability p{max-width:650px;margin-top:16px;font-size:17px;line-height:1.6;color:var(--nvc-ink-soft);}
+.humanitarian-accountability-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0;padding:0;counter-reset:accountability-step;}
+.humanitarian-accountability-list li{counter-increment:accountability-step;list-style:none;min-height:128px;padding:22px 18px;border:1px solid rgba(22,41,63,.1);border-radius:15px;background:rgba(255,255,255,.82);box-shadow:0 10px 24px rgba(22,41,63,.045);font-size:16px;font-weight:700;line-height:1.3;color:var(--nvc-navy);}
+.humanitarian-accountability-list li::before{content:counter(accountability-step,decimal-leading-zero);display:block;margin-bottom:22px;font-family:var(--font-cond);font-size:28px;font-weight:700;letter-spacing:.05em;color:var(--nvc-patina-deep);}
+
 .humanitarian-location{background:var(--surface-2);}
-.humanitarian-location-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:28px;align-items:stretch;}
-.humanitarian-location-card,.humanitarian-contact-card{padding:clamp(34px,4vw,52px);border-radius:var(--r-lg);}
+.humanitarian-location-panel{display:grid;grid-template-columns:minmax(0,.9fr) minmax(340px,1.1fr);overflow:hidden;border:1px solid var(--nvc-line);border-radius:var(--r-lg);background:#fff;box-shadow:0 16px 40px rgba(22,41,63,.07);}
+.humanitarian-location-card,.humanitarian-contact-card{padding:clamp(28px,3vw,40px);border-radius:0;}
 .humanitarian-location-card{background:var(--nvc-navy);color:#fff;}
-.humanitarian-location-card h2{margin-top:18px;font-size:clamp(2.25rem,3.5vw,3.5rem);line-height:1.02;color:#fff;}
-.humanitarian-address{margin-top:30px;padding-left:21px;border-left:3px solid var(--nvc-copper);font-size:23px;line-height:1.55;}
+.humanitarian-location-card h2{margin-top:15px;font-size:clamp(2rem,3vw,3rem);line-height:1.02;color:#fff;}
+.humanitarian-location-name{display:block;margin-top:22px;color:var(--nvc-copper-soft);font-size:18px;}
+.humanitarian-address{margin-top:10px;padding-left:18px;border-left:3px solid var(--nvc-copper);font-size:20px;line-height:1.5;}
 .humanitarian-website{display:inline-block;margin-top:20px;color:var(--nvc-patina-soft);font-weight:700;text-underline-offset:4px;overflow-wrap:anywhere;}
 .humanitarian-website:hover{color:#fff;}
-.humanitarian-hours{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px;}
+.humanitarian-hours{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px;}
 .humanitarian-hours div{padding:16px;border:1px solid var(--nvc-line-on-dark);border-radius:12px;}
 .humanitarian-hours span{display:block;font-family:var(--font-cond);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--nvc-copper-soft);}
 .humanitarian-hours strong{display:block;margin-top:7px;font-size:17px;color:#fff;}
-.humanitarian-contact-card{background:#fff;border:1px solid var(--nvc-line);}
-.humanitarian-contact-list{display:grid;gap:10px;margin-top:22px;}
-.humanitarian-contact-list a{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 17px;border:1px solid var(--nvc-line);border-radius:12px;text-decoration:none;font-size:18px;font-weight:700;color:var(--nvc-navy);}
+.humanitarian-contact-card{background:#fff;border:0;}
+.humanitarian-contact-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:18px;}
+.humanitarian-contact-list a{display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-height:64px;padding:13px 14px;border:1px solid var(--nvc-line);border-radius:11px;text-decoration:none;font-size:18px;font-weight:700;color:var(--nvc-navy);}
 .humanitarian-contact-list a span{font-family:var(--font-cond);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--nvc-patina-deep);}
 .humanitarian-contact-card>.btn{width:100%;justify-content:center;margin-top:20px;text-align:center;}
 
 .humanitarian-process{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:0;counter-reset:humanitarian-step;}
-.humanitarian-process li{counter-increment:humanitarian-step;list-style:none;position:relative;min-height:145px;padding:24px 18px;border:1px solid var(--nvc-line);border-radius:16px;background:#fff;}
-.humanitarian-process li::before{content:counter(humanitarian-step,decimal-leading-zero);display:block;font-family:var(--font-cond);font-size:18px;font-weight:700;color:var(--nvc-copper);letter-spacing:.1em;margin-bottom:32px;}
+.humanitarian-process li{counter-increment:humanitarian-step;list-style:none;position:relative;min-height:118px;padding:18px 14px;border:1px solid var(--nvc-line);border-radius:14px;background:#fff;}
+.humanitarian-process li::before{content:counter(humanitarian-step,decimal-leading-zero);display:block;font-family:var(--font-cond);font-size:31px;line-height:1;font-weight:700;color:var(--nvc-copper);letter-spacing:.05em;margin-bottom:18px;}
 .humanitarian-process strong{font-size:15px;color:var(--nvc-navy);}
 .humanitarian-transparency{background:var(--nvc-navy);}
 .humanitarian-transparency-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:44px;align-items:start;}
@@ -528,11 +537,11 @@ table.nvc-table{width:100%;border-collapse:collapse;font-size:14.5px;}
 .humanitarian-location-actions .btn{width:100%;justify-content:center;text-align:center;}
 .humanitarian-contact-card>p{margin-top:12px;color:var(--nvc-ink-soft);line-height:1.55;}
 .humanitarian-guides{background:var(--surface-2);}
-.humanitarian-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:38px;}
-.humanitarian-gallery button{min-width:0;padding:12px;border:1px solid var(--nvc-line);border-radius:18px;background:#fff;color:var(--nvc-navy);cursor:pointer;text-align:left;box-shadow:0 8px 24px rgba(22,41,63,.05);transition:transform .2s ease,box-shadow .2s ease;}
+.humanitarian-gallery{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px;margin-top:30px;}
+.humanitarian-gallery button{min-width:0;padding:7px;border:1px solid var(--nvc-line);border-radius:14px;background:#fff;color:var(--nvc-navy);cursor:pointer;text-align:left;box-shadow:0 7px 18px rgba(22,41,63,.045);transition:transform .2s ease,box-shadow .2s ease;}
 .humanitarian-gallery button:hover,.humanitarian-gallery button:focus-visible{transform:translateY(-3px);box-shadow:0 14px 32px rgba(22,41,63,.12);}
-.humanitarian-gallery img{display:block;width:100%;height:250px;object-fit:cover;object-position:top;border-radius:11px;background:#fff;}
-.humanitarian-gallery span{display:block;padding:14px 7px 5px;font-size:15px;font-weight:700;}
+.humanitarian-gallery img{display:block;width:100%;height:190px;object-fit:contain;object-position:center;border-radius:9px;background:#fff;}
+.humanitarian-gallery span{display:block;padding:10px 5px 4px;font-size:12px;font-weight:700;line-height:1.25;}
 .humanitarian-final-cta{background:var(--nvc-navy);color:#fff;text-align:center;}
 .humanitarian-final-cta .wrap{max-width:850px;}
 .humanitarian-final-cta .humanitarian-kicker{justify-content:center;}
@@ -541,15 +550,17 @@ table.nvc-table{width:100%;border-collapse:collapse;font-size:14.5px;}
 .humanitarian-final-cta .humanitarian-share{margin-top:28px;}
 .humanitarian-final-cta .btn{min-height:50px;padding-inline:24px;}
 .humanitarian-final-cta .humanitarian-copy-status{color:var(--nvc-patina-soft);}
+.humanitarian-final-motto{display:block;margin-top:26px;font-family:var(--font-cond);font-size:14px;text-transform:uppercase;letter-spacing:.12em;color:var(--nvc-copper-soft);}
 
 .humanitarian-modal{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:24px;}
 .humanitarian-modal[hidden]{display:none;}
 .humanitarian-modal-backdrop{position:absolute;inset:0;background:rgba(4,13,24,.84);backdrop-filter:blur(4px);}
-.humanitarian-modal-panel{position:relative;z-index:1;width:min(100%,720px);max-height:94vh;display:flex;flex-direction:column;align-items:center;padding:16px;border-radius:18px;background:#fff;box-shadow:0 28px 80px rgba(0,0,0,.42);}
+.humanitarian-modal-panel{position:relative;z-index:1;width:min(520px,90vw);max-height:85vh;display:flex;flex-direction:column;align-items:center;padding:14px;border-radius:18px;background:#fff;box-shadow:0 28px 80px rgba(0,0,0,.42);}
 .humanitarian-modal-header{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 0 12px;}
 .humanitarian-modal-header h2{font-size:20px;}
 .humanitarian-modal-close{width:40px;height:40px;border:0;border-radius:50%;background:var(--surface-2);color:var(--nvc-navy);font-size:28px;line-height:1;cursor:pointer;}
-.humanitarian-modal-panel>img{display:block;width:auto;max-width:100%;height:auto;max-height:78vh;object-fit:contain;}
+.humanitarian-modal-panel>img{display:block!important;width:auto!important;max-width:100%!important;height:auto!important;max-height:74vh!important;object-fit:contain!important;}
+body[data-page="ayuda-humanitaria"] main>section:not(.humanitarian-hero){padding-top:clamp(38px,4.5vw,58px);padding-bottom:clamp(38px,4.5vw,58px);}
 .humanitarian-modal-link{margin-top:10px;color:var(--nvc-patina-deep);font-size:13px;font-weight:700;}
 body.humanitarian-modal-open{overflow:hidden;}
 
@@ -582,14 +593,16 @@ body.humanitarian-campaign-alert-open{overflow:hidden;}
   .humanitarian-needs-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
   .humanitarian-need-card:last-child{grid-column:1/-1;width:min(100%,calc(50% - 9px));justify-self:center;}
   .humanitarian-trust-grid{grid-template-columns:1fr;}
+  .humanitarian-accountability-grid{grid-template-columns:1fr;}
   .humanitarian-process{grid-template-columns:repeat(5,1fr);}
   .humanitarian-process li{padding:20px 12px;}
-  .humanitarian-gallery{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .humanitarian-location-panel{grid-template-columns:1fr;}
+  .humanitarian-gallery{grid-template-columns:repeat(4,minmax(0,1fr));}
 }
 @media(max-width:780px){
   .humanitarian-home-banner-inner{grid-template-columns:auto 1fr;}
   .humanitarian-home-banner .btn{grid-column:1/-1;width:100%;justify-content:center;}
-  .humanitarian-hero-inner,.humanitarian-location-grid,.humanitarian-transparency-grid{grid-template-columns:1fr;}
+  .humanitarian-hero-inner,.humanitarian-transparency-grid{grid-template-columns:1fr;}
   .humanitarian-identity{display:none;}
   .humanitarian-hero-actions{display:grid;grid-template-columns:1fr;}
   .humanitarian-hero-actions .btn{width:100%;justify-content:center;}
@@ -598,32 +611,40 @@ body.humanitarian-campaign-alert-open{overflow:hidden;}
   .humanitarian-home-banner-inner{grid-template-columns:1fr;gap:12px;padding-top:18px;padding-bottom:18px;}
   .humanitarian-home-banner-mark{display:none;}
   .humanitarian-home-banner-copy h2{font-size:25px;}
-  .humanitarian-hero{padding:42px 0 46px;}
-  .humanitarian-hero h1{font-size:3rem;}
+  .humanitarian-hero{padding:34px 0 38px;}
+  .humanitarian-hero h1{font-size:2.75rem;}
   .humanitarian-message{font-size:22px;line-height:1.14;}
   .humanitarian-summary{font-size:15px;line-height:1.6;}
   .humanitarian-hero-actions{gap:12px;margin-top:26px;}
   .humanitarian-hero-actions .btn{min-height:52px;}
   .humanitarian-needs-grid{grid-template-columns:1fr;}
   .humanitarian-need-card:last-child{grid-column:auto;width:100%;}
-  .humanitarian-need-card{padding:26px;}
+  .humanitarian-card-photo{height:clamp(170px,48vw,190px);}
+  .humanitarian-card-body{padding:22px;}
   .humanitarian-needs .humanitarian-intro h2,.humanitarian-trust h2{font-size:2.55rem;}
   .humanitarian-need-card h3{font-size:24px;}
   .humanitarian-hours{grid-template-columns:1fr;}
   .humanitarian-process{grid-template-columns:1fr;}
-  .humanitarian-process li{min-height:110px;}
+  .humanitarian-process li{min-height:auto;display:flex;align-items:center;gap:14px;padding:15px;}
+  .humanitarian-process li::before{margin:0;}
+  .humanitarian-accountability-grid{gap:24px;}
+  .humanitarian-accountability h2{font-size:2.35rem;}
+  .humanitarian-accountability-list{grid-template-columns:1fr;gap:10px;}
+  .humanitarian-accountability-list li{min-height:auto;display:flex;align-items:center;gap:16px;padding:16px;}
+  .humanitarian-accountability-list li::before{margin:0;font-size:24px;}
   .humanitarian-location-actions{grid-template-columns:1fr;}
+  .humanitarian-contact-list{grid-template-columns:1fr;}
   .humanitarian-location-card,.humanitarian-contact-card{padding:30px 24px;}
   .humanitarian-location-card h2{font-size:2.35rem;}
   .humanitarian-address{font-size:20px;}
   .humanitarian-contact-list a{min-height:56px;font-size:18px;}
-  .humanitarian-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+  .humanitarian-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;}
   .humanitarian-gallery button{padding:7px;}
-  .humanitarian-gallery img{height:180px;}
+  .humanitarian-gallery img{height:170px;}
   .humanitarian-gallery span{font-size:12px;}
   .humanitarian-modal{padding:12px;}
-  .humanitarian-modal-panel{padding:12px;max-height:96vh;}
-  .humanitarian-modal-panel>img{max-height:78vh;}
+  .humanitarian-modal-panel{padding:12px;max-height:85vh;}
+  .humanitarian-modal-panel>img{max-height:74vh!important;}
   .humanitarian-share{display:grid;grid-template-columns:1fr;}
   .humanitarian-share .btn{width:100%;}
   .humanitarian-campaign-alert{place-items:end center;padding:16px;}
