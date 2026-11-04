@@ -5,6 +5,114 @@
    ============================================================ */
 (function(){
 
+  const appRoot = new URL('../', document.currentScript.src);
+  const appURL = 'https://corporacionnuevavozcolectiva.org/';
+  const shareText = 'Conoce Nueva Voz Colectiva y sus programas de ciudadanía, liderazgo y desarrollo territorial.';
+  let installPrompt, installed = false, waitingWorker, updateRequested = false;
+  const standalone = window.matchMedia('(display-mode: standalone)');
+  const isInstalled = () => installed || standalone.matches || navigator.standalone === true;
+  // Do not preventDefault: preserve the browser's own installation invitation.
+  window.addEventListener('beforeinstallprompt', event => { installPrompt = event; });
+  window.addEventListener('appinstalled', () => { installed = true; installPrompt = null; syncAppButtons(); });
+  standalone.addEventListener('change', syncAppButtons);
+
+  function appActions(){
+    return `<div class="nvc-app-actions" aria-label="Aplicación Nueva Voz Colectiva">
+      <button type="button" class="btn btn-secondary btn-sm" data-app-install>Instalar app</button>
+      <button type="button" class="btn btn-secondary btn-sm" data-app-share>Compartir app</button>
+      <button type="button" class="btn btn-secondary btn-sm" data-app-update hidden>Actualizar app</button>
+    </div>`;
+  }
+  function syncAppButtons(){
+    document.querySelectorAll('[data-app-install]').forEach(button => { button.hidden = isInstalled(); });
+    document.querySelectorAll('[data-app-update]').forEach(button => { button.hidden = !waitingWorker; });
+  }
+  function setupApp(){
+    const dialog = document.createElement('dialog');
+    dialog.className = 'nvc-app-dialog';
+    dialog.setAttribute('aria-labelledby','nvc-app-title');
+    dialog.innerHTML = `<h2 id="nvc-app-title">Nueva Voz Colectiva</h2>
+      <p data-app-help></p>
+      <div class="nvc-app-options">
+        <button type="button" class="btn btn-primary" data-app-native>Compartir con otras aplicaciones</button>
+        <a class="btn btn-secondary" href="https://wa.me/?text=${encodeURIComponent(shareText+' '+appURL)}" target="_blank" rel="noopener noreferrer">Compartir por WhatsApp</a>
+        <button type="button" class="btn btn-secondary" data-app-copy>Copiar enlace</button>
+      </div>
+      <label for="nvc-app-link">Enlace oficial</label>
+      <input id="nvc-app-link" type="url" readonly value="${appURL}">
+      <p role="status" aria-live="polite" data-app-status></p>
+      <button type="button" class="btn btn-secondary" data-app-close>Cerrar</button>`;
+    document.body.appendChild(dialog);
+    const status = dialog.querySelector('[data-app-status]');
+    const nativeButton = dialog.querySelector('[data-app-native]');
+    nativeButton.hidden = typeof navigator.share !== 'function';
+    let opener;
+    function openHelp(installation){
+      opener = document.activeElement;
+      const ios = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      dialog.querySelector('[data-app-help]').textContent = installation
+        ? (ios ? 'En iPhone o iPad, abre este sitio en Safari. Pulsa Compartir y elige Añadir a pantalla de inicio. Confirma con Añadir.'
+          : 'Abre el menú de tu navegador y busca Instalar app o Añadir a pantalla de inicio. Si no aparece, puedes seguir usando el sitio desde el navegador.')
+        : 'Comparte el portal institucional de Nueva Voz Colectiva.';
+      status.textContent = '';
+      dialog.showModal();
+    }
+    async function share(){
+      if(typeof navigator.share !== 'function'){ openHelp(false); return; }
+      try { await navigator.share({title:'Nueva Voz Colectiva',text:shareText,url:appURL}); }
+      catch(error){
+        if(error.name !== 'AbortError'){
+          if(!dialog.open) openHelp(false);
+          status.textContent = 'No fue posible abrir las aplicaciones. Puedes usar WhatsApp o copiar el enlace.';
+        }
+      }
+    }
+    document.addEventListener('click', async event => {
+      const button = event.target.closest('[data-app-install],[data-app-share],[data-app-update]');
+      if(!button) return;
+      if(button.hasAttribute('data-app-share')){ await share(); return; }
+      if(button.hasAttribute('data-app-update')){
+        if(waitingWorker){ updateRequested = true; waitingWorker.postMessage({type:'NVC_SKIP_WAITING'}); }
+        return;
+      }
+      if(isInstalled()) return;
+      if(!installPrompt){ openHelp(true); return; }
+      const prompt = installPrompt; installPrompt = null;
+      button.disabled = true;
+      try { await prompt.prompt(); await prompt.userChoice; }
+      catch { openHelp(true); }
+      finally { button.disabled = false; syncAppButtons(); }
+    });
+    nativeButton.addEventListener('click',share);
+    dialog.querySelector('[data-app-copy]').addEventListener('click',async()=>{
+      try {
+        if(!navigator.clipboard) throw new Error('Clipboard unavailable');
+        await navigator.clipboard.writeText(appURL);
+        status.textContent = 'Enlace copiado.';
+      } catch {
+        const input = dialog.querySelector('input'); input.focus(); input.select();
+        status.textContent = 'Selecciona y copia el enlace mostrado con las opciones de tu dispositivo.';
+      }
+    });
+    dialog.querySelector('[data-app-close]').addEventListener('click',()=>dialog.close());
+    dialog.addEventListener('close',()=>{ if(opener && opener.isConnected) opener.focus(); });
+    syncAppButtons();
+    if('serviceWorker' in navigator && window.isSecureContext){
+      navigator.serviceWorker.addEventListener('controllerchange',()=>{ if(updateRequested) location.reload(); });
+      navigator.serviceWorker.register(new URL('sw.js',appRoot),{scope:appRoot.href,updateViaCache:'none'}).then(registration=>{
+        const showUpdate = () => { waitingWorker = registration.waiting; syncAppButtons(); };
+        showUpdate();
+        registration.addEventListener('updatefound',()=>{
+          const worker = registration.installing;
+          if(worker) worker.addEventListener('statechange',()=>{
+            if(worker.state === 'installed' && navigator.serviceWorker.controller) showUpdate();
+          });
+        });
+        registration.update().catch(()=>{}); // Offline is expected; retry on the next online visit.
+      }).catch(()=>{}); // Keep navigation and browser installation available if registration fails.
+    }
+  }
+
   const ICONS = {
     inicio:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 11 12 4l8 7"/><path d="M6 10v9h12v-9"/></svg>',
     quienes: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1.2-4 4-6 7-6s5.8 2 7 6"/></svg>',
@@ -95,7 +203,7 @@
         <a class="nvc-brand" href="${url('index.html')}">
           <img src="${base()}assets/logo/nvc-logo-oficial.png" alt="Nueva Voz Colectiva">
         </a>
-        <nav class="nvc-nav">${navItems}</nav>
+        <nav class="nvc-nav" aria-label="Navegación principal">${navItems}${appActions()}</nav>
         <div class="nvc-actions">
           <div class="lang-switch"><button class="active">ES</button><button>EN</button></div>
           <a class="btn btn-primary btn-sm" href="${url('participa.html')}">Participa</a>
@@ -113,6 +221,7 @@
           <span class="cond" style="text-transform:uppercase;letter-spacing:.1em;font-weight:700;font-size:13px">Menú</span>
           <button class="nvc-drawer-close" id="nvc-drawer-close" aria-label="Cerrar">&times;</button>
         </div>
+        ${appActions()}
         ${SITE_MAP.map(item=>{
           if(item.children){
             return `<details><summary>${item.label} <span>+</span></summary>
@@ -183,5 +292,6 @@
     renderHeader();
     renderFooter();
     renderBreadcrumb();
+    setupApp();
   });
 })();
