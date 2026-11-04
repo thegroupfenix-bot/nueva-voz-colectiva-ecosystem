@@ -132,6 +132,12 @@ body[data-page="inicio"] .wrap{
   padding-left:clamp(24px,5vw,80px);padding-right:clamp(24px,5vw,80px);
 }
 body[data-page="inicio"] .nvc-actions .btn-sm{padding:9px 12px;}
+body[data-page="inicio"] .nvc-brand img{height:75px;width:auto;max-width:none;}
+@media(min-width:1400px){
+  body[data-page="inicio"] .nvc-header-in{grid-template-columns:auto minmax(0,1fr) auto;column-gap:20px;}
+  body[data-page="inicio"] .nvc-nav{display:flex;}
+  body[data-page="inicio"] .nvc-burger{display:none;}
+}
 body[data-page="inicio"] .hero-home{
   min-height:0;justify-content:center;
   padding-top:clamp(40px,4vw,64px);
@@ -160,8 +166,8 @@ body[data-page="inicio"] .hero-home>.wrap{
 .hero-v2-copy{max-width:none;}
 body[data-page="inicio"] .hero-home h1{
   max-width:740px;margin-top:16px;
-  font-size:clamp(2.5rem,2.6vw,3rem);line-height:1.01;
-  letter-spacing:-.045em;text-wrap:balance;
+  font-size:clamp(2.5rem,2.6vw,3rem);line-height:1.12;
+  letter-spacing:-.045em;text-wrap:balance;overflow-wrap:break-word;
 }
 body[data-page="inicio"] .hero-home .lead{
   max-width:670px;margin-top:16px;font-size:clamp(14.5px,1vw,16.5px);line-height:1.48;
@@ -228,6 +234,7 @@ body[data-page="quienes"] .section-after-hero .nvc-breadcrumb{
 @media(max-width:620px){
   .nvc-header-in{padding-top:10px;padding-bottom:10px;}
   .nvc-brand img{height:50px;}
+  body[data-page="inicio"] .nvc-brand img{height:60px;}
   .lang-switch{display:none;}
   .page-hero h1{font-size:2.5rem;}
   .page-hero .hero-actions{display:grid;grid-template-columns:1fr;gap:10px;}
@@ -237,7 +244,7 @@ body[data-page="quienes"] .section-after-hero .nvc-breadcrumb{
   body[data-page="quienes"] .page-hero{padding-top:32px;padding-bottom:28px;}
   body[data-page="quienes"] .page-hero h1{font-size:clamp(2rem,8.2vw,2.5rem);line-height:1.04;}
   body[data-page="inicio"] .hero-home h1{
-    font-family:var(--font-cond);font-size:clamp(1.7rem,7.2vw,2rem);line-height:1.04;letter-spacing:-.025em;
+    font-family:var(--font-cond);font-size:clamp(1.7rem,7.2vw,2rem);line-height:1.25;letter-spacing:-.025em;
   }
   body[data-page="quienes"] .page-hero .lead{font-size:14px;line-height:1.45;}
   body[data-page="inicio"] .hero-home .lead{font-size:14px;line-height:1.48;}
