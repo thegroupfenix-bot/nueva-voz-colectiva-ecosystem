@@ -46,9 +46,8 @@
     const status = dialog.querySelector('[data-app-status]');
     const nativeButton = dialog.querySelector('[data-app-native]');
     nativeButton.hidden = typeof navigator.share !== 'function';
-    let opener;
     function openHelp(installation){
-      opener = document.activeElement;
+      nativeButton.hidden = typeof navigator.share !== 'function';
       const ios = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
       dialog.querySelector('[data-app-help]').textContent = installation
         ? (ios ? 'En iPhone o iPad, abre este sitio en Safari. Pulsa Compartir y elige Añadir a pantalla de inicio. Confirma con Añadir.'
@@ -70,7 +69,7 @@
     document.addEventListener('click', async event => {
       const button = event.target.closest('[data-app-install],[data-app-share],[data-app-update]');
       if(!button) return;
-      if(button.hasAttribute('data-app-share')){ await share(); return; }
+      if(button.hasAttribute('data-app-share')){ openHelp(false); return; }
       if(button.hasAttribute('data-app-update')){
         if(waitingWorker){ updateRequested = true; waitingWorker.postMessage({type:'NVC_SKIP_WAITING'}); }
         return;
@@ -95,7 +94,7 @@
       }
     });
     dialog.querySelector('[data-app-close]').addEventListener('click',()=>dialog.close());
-    dialog.addEventListener('close',()=>{ if(opener && opener.isConnected) opener.focus(); });
+    // Native dialog.close() restores focus to the invoking control.
     syncAppButtons();
     if('serviceWorker' in navigator && window.isSecureContext){
       navigator.serviceWorker.addEventListener('controllerchange',()=>{ if(updateRequested) location.reload(); });

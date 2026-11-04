@@ -34,3 +34,7 @@ Reversión: restaurar el respaldo del alojamiento y revertir mediante commit. Si
 - https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeinstallprompt_event
 - https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share
 - https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/update
+
+## Continuación autorizada
+La revisión de respaldos de Hostinger queda suspendida por instrucción expresa y no bloquea el desarrollo PWA. No se realizaron lecturas ni restauraciones de respaldos en esta continuación. La integración/publicación se presenta para revisión, sin ejecutarla.
+Se corrigió el acceso a las alternativas de compartir: al pulsar Compartir app siempre se ofrecen WhatsApp y copiar enlace, incluso en modo instalado y cuando existe navigator.share. El selector nativo se abre con una acción explícita dentro de ese panel; cancelarlo conserva las alternativas. No cambian los estilos ni la distribución respecto a la versión PWA anterior.
