@@ -1,0 +1,34 @@
+[
+  {
+    "device": "desktop1440",
+    "status": "passed",
+    "simulation": true
+  },
+  {
+    "device": "desktop1920",
+    "status": "passed",
+    "simulation": true
+  },
+  {
+    "device": "android",
+    "status": "passed",
+    "simulation": true
+  },
+  {
+    "device": "iphone",
+    "status": "passed",
+    "simulation": true
+  },
+  {
+    "offlineVisitedPage": true,
+    "offlineFallback": true,
+    "workerUpdate": true,
+    "manifest": true
+  },
+  {
+    "internalPages": 26
+  },
+  {
+    "standaloneLaunchSimulated": true
+  }
+]
