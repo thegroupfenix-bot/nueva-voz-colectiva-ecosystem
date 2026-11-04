@@ -280,3 +280,20 @@ body[data-page="quienes"] .section-after-hero .nvc-breadcrumb{
 .g4{grid-template-columns:repeat(4,1fr);}
 @media(max-width:900px){.g2{grid-template-columns:1fr;}.g3,.g4{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:620px){.g2,.g3,.g4{grid-template-columns:1fr;}}
+
+/* Shared application controls: a separate row inside the existing desktop nav. */
+.nvc-nav{flex-wrap:wrap;}
+.nvc-nav>.nvc-app-actions{flex-basis:100%;justify-content:flex-end;}
+.nvc-app-actions{display:flex;flex-wrap:wrap;gap:8px;}
+.nvc-app-actions button{min-height:44px;}
+.nvc-app-actions [hidden],.nvc-app-dialog [hidden]{display:none!important;}
+.nvc-drawer .nvc-app-actions{padding:14px 0;border-bottom:1px solid var(--nvc-line-on-dark);}
+.nvc-drawer .nvc-app-actions .btn{color:#fff;border-color:var(--nvc-line-on-dark);background:transparent;}
+.nvc-app-dialog{margin:auto;padding:28px;width:min(520px,calc(100% - 32px));max-height:85dvh;overflow:auto;border:1px solid var(--nvc-line);border-radius:var(--r-md);background:var(--nvc-paper);color:var(--nvc-navy);}
+.nvc-app-dialog::backdrop{background:rgba(22,41,63,.65);}
+.nvc-app-dialog h2{font-size:24px;line-height:1.3;}
+.nvc-app-dialog p{margin:16px 0;}
+.nvc-app-options{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;}
+.nvc-app-dialog .btn{white-space:normal;min-height:44px;}
+.nvc-app-dialog input{display:block;width:100%;min-width:0;margin-top:8px;padding:10px;border:1px solid var(--nvc-line);font:inherit;}
+.nvc-app-dialog :focus-visible,.nvc-app-actions :focus-visible{outline:3px solid var(--nvc-copper);outline-offset:3px;}
